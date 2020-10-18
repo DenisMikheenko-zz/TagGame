@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagGameLib", "TagGameLib\TagGameLib.csproj", "{0089EF19-841A-4367-9DB2-9E93723482EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagGameLib", "TagGameLib\TagGameLib.csproj", "{0089EF19-841A-4367-9DB2-9E93723482EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartUp", "StartUp\StartUp.csproj", "{00B4784F-5AC3-4FC1-A57E-0B356A6D9485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartUp", "StartUp\StartUp.csproj", "{00B4784F-5AC3-4FC1-A57E-0B356A6D9485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagGameWpf", "TagGameWpf\TagGameWpf.csproj", "{93B59C5C-B031-45AF-8BA8-3E8B48D64661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{00B4784F-5AC3-4FC1-A57E-0B356A6D9485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B4784F-5AC3-4FC1-A57E-0B356A6D9485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B4784F-5AC3-4FC1-A57E-0B356A6D9485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B59C5C-B031-45AF-8BA8-3E8B48D64661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B59C5C-B031-45AF-8BA8-3E8B48D64661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B59C5C-B031-45AF-8BA8-3E8B48D64661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B59C5C-B031-45AF-8BA8-3E8B48D64661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
