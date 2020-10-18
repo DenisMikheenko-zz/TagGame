@@ -20,19 +20,24 @@ namespace TagGameLib
             Init();
             Show();
             Console.WriteLine();
-            Move("5");
-            Show();
+            //Move("5");
+            //Show();
         }
 
         private void Init()
         {
             _tags = new List<Tag>();
-            int tagName = 0;
+
+            var tagNamesInitial = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0 };
+
+            var tagNames = ShuffleIntArray(tagNamesInitial);
+
+            int tagNameIndex = 0;
             for (int i = 0; i < _size; i++)
             {
                 for (int j = 0; j < _size; j++)
                 {
-                    _tags.Add(new Tag() { Name = tagName++.ToString(), Position = new Position() { X= j, Y=i}});
+                    _tags.Add(new Tag() { Name = tagNames[tagNameIndex++].ToString(), Position = new Position() { X= j, Y=i}});
                 }
             }
         }
@@ -73,5 +78,23 @@ namespace TagGameLib
                 Console.WriteLine();
             }
         }
+
+        private int[] ShuffleIntArray(int[] arr)
+        {
+            Random rand = new Random();
+
+            for (int i = arr.Length - 1; i >= 1; i--)
+            {
+                int j = rand.Next(i + 1);
+
+                int tmp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = tmp;
+            }
+
+            return arr;
+        }
+
+
     }
 }
