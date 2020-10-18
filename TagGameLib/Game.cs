@@ -20,7 +20,7 @@ namespace TagGameLib
             Init();
             Show();
             Console.WriteLine();
-            Move("15");
+            Move("5");
             Show();
         }
 
@@ -39,12 +39,22 @@ namespace TagGameLib
 
         private void Move(string tagName)
         {
+
+            
             var nullTagIndex = _tags.FindLastIndex(c => c.Name == 0.ToString());
             
             var tagIndexToMove =_tags.FindLastIndex(c => c.Name == tagName);
 
             var nullPosition = _tags[nullTagIndex].Position;
             var tagToMovePosition = _tags[tagIndexToMove].Position;
+
+            var diffX =Math.Abs(nullPosition.X - tagToMovePosition.X);
+            var diffY = Math.Abs(nullPosition.Y - tagToMovePosition.Y);
+
+            if (diffX > 1 || diffY > 1) throw new Exception("The tag can not be moved");
+
+            // Eliminates the possibility of moving the tag diagonally.
+            if (diffX==1 && diffY==1) throw new Exception("The tag can not be moved");
 
             _tags[nullTagIndex].Position = tagToMovePosition;
             _tags[tagIndexToMove].Position = nullPosition;
