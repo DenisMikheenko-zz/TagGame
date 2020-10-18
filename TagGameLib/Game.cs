@@ -18,7 +18,10 @@ namespace TagGameLib
         {
             _size = size;
             Init();
+            Show();
+            Console.WriteLine();
             Move("15");
+            Show();
         }
 
         private void Init()
@@ -36,11 +39,9 @@ namespace TagGameLib
 
         private void Move(string tagName)
         {
-            var nullTagIndex = _tags.FindLastIndex(c => c.Name == tagName);
-            if (nullTagIndex == null) throw new NullReferenceException("nullTagIndex"); 
+            var nullTagIndex = _tags.FindLastIndex(c => c.Name == 0.ToString());
             
             var tagIndexToMove =_tags.FindLastIndex(c => c.Name == tagName);
-            if (tagIndexToMove == null) throw new NullReferenceException("tagIndexToMove is null");
 
             var nullPosition = _tags[nullTagIndex].Position;
             var tagToMovePosition = _tags[tagIndexToMove].Position;
@@ -51,7 +52,16 @@ namespace TagGameLib
 
         private void Show()
         {
-
+            for (int i = 0; i < _size; i++)
+            {
+                for (int j = 0; j < _size; j++)
+                {
+                    Console.Write(_tags.Where(t=>t.Position.Y == i)
+                                        .Where(t=>t.Position.X == j)
+                                        .FirstOrDefault().Name + "     ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

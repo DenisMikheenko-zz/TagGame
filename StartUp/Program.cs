@@ -8,7 +8,7 @@ namespace StartUp
         static void Main(string[] args)
         {
             var game = new Game();
-            game.Start();
+            game.Start(4);
         }
     }
 }
